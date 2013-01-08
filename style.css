@@ -1,0 +1,102 @@
+/*
+Theme Name: CT Web Design
+Theme URI: http://themes.required.ch/
+Author: required+ Team
+Author URI: http://required.ch/
+Description: Starter child theme for the required+ Foundation parent theme.
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0.1
+Template: required-foundation
+Text Domain: requiredstarter
+*/
+
+/*
+	Make the template work
+*/
+@import url(../required-foundation/style.css);
+
+body { background: white; font-family: 'Varela Round', sans-serif; font-weight: 400; font-style: normal; font-size: 14px; line-height: 1; color: #222222; position: relative; -webkit-font-smoothing: antialiased; }
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Arvo', serif; font-weight: 400; }
+
+#site-title { font-weight: 600; }
+
+.required-header .inline-list {
+	margin-top: 14px;
+}
+
+/* Make pagination work */
+ul.page-numbers { display: block; height: 24px; margin-left: -5px; }
+ul.page-numbers li {float: left; display: block; height: 24px; color: #999; font-size: 14px; margin-left: 5px; }
+ul.page-numbers li a { display: block; padding: 1px 7px 1px; color: #555; }
+ul.page-numbers li:hover a, ul.page-numbers li a:focus { background: #e6e6e6; }
+ul.page-numbers li.unavailable a { cursor: default; color: #999; }
+ul.page-numbers li.unavailable:hover a,ul.page-numbers li.unavailable a:focus { background: transparent; }
+ul.page-numbers li span.current { background: #fe5e08; color: #fff; font-weight: bold; cursor: default; display: block; padding: 1px 7px 1px; }
+
+#sidebar {
+	margin-top: 15px;
+}
+
+::-moz-selection {
+    background: #ff6600;
+    text-shadow: none;
+}
+
+::selection {
+    background: #ff6600;
+    text-shadow: none;
+}
+
+/* <hr class="carved" /> */
+hr.carved {
+  clear: both; 
+  float: none; 
+  width: 100%; 
+  height: 2px;
+  margin: 1.4em 0;
+  border: none; 
+  background: #ddd;
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0.5, rgb(221,221,221)),
+      color-stop(0.5, rgb(255,255,255))
+  );
+  background-image: -moz-linear-gradient(
+      center top,
+      rgb(221,221,221) 50%,
+      rgb(255,255,255) 50%
+  );
+}
+
+/* <hr class="faded" /> */
+hr.faded {
+  clear: both; 
+  float: none; 
+  width: 100%; 
+  height: 1px;
+  margin: 1.4em 0;
+  border: none; 
+  background: #222;
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      right bottom,
+      color-stop(0, rgb(255,255,255)),
+      color-stop(0.1, rgb(254,94,84)),
+      color-stop(0.9, rgb(254,94,8)),
+      color-stop(1, rgb(255,255,255))
+  );
+  background-image: -moz-linear-gradient(
+      left center,
+      rgb(255,255,255) 0%,
+      rgb(254,94,8) 50%,
+      rgb(254,94,8) 50%,
+      rgb(255,255,255) 100%
+  );
+}
+
+

@@ -1,0 +1,259 @@
+/**
+ * This app.css is all yours, if you wish to have it ready with your application put it in here!
+ */
+
+ /* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Homepage
+:: Page Name 2
+:: Blog Posts
+:: Landing Page
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+body { background: white; font-family: 'Varela Round', sans-serif; font-weight: 400; font-style: normal; font-size: 14px; line-height: 1; color: #222222; position: relative; -webkit-font-smoothing: antialiased; }
+    /* Wrapped around .top-bar to make it fixed at the top */
+.fixed { width: 100%; left: 0; position: fixed; top: 0; z-index: 99; }
+.top-bar {background: none repeat scroll 0% 0% rgb(254, 94, 8); height: 75px; line-height: 75px; margin: 0px; padding: 0px; width: 100%;}
+.top-bar ul {margin-left: 0px; display: inline; height: 75px; line-height: 85px; list-style: none outside none;}
+.top-bar ul > li:hover:not(.name), .top-bar ul > li.active:not(.name) {background: none repeat scroll 0% 0% rgb(236,83,1);}
+.top-bar ul > li.name { background: none repeat scroll 0% 0% rgb(254,94,8); height: 75px;}
+.top-bar ul > li.name h1 a {color: rgb(255, 255, 255); display: block; line-height: 75px !important; padding-left: 22.5px;height: 75px;}
+.top-bar ul > li.name h1 a:hover {background: rgb(254,94,8);}
+.top-bar ul > li.name h1 a:hover {color: rgb(217, 217, 217);}
+.top-bar ul > li a:not(.button) { color: white; display: block; font-size: 13px; font-weight: bold; height: 75px; line-height: 70px; padding: 0 15px; }
+.top-bar ul > li.has-button:hover {background: none repeat scroll 0% 0% rgb(236,83,1);}
+.button:hover {color: rgb(255, 255, 255);background-color: rgb(236,83,1);}
+.top-bar ul > li:hover a,.top-bar ul > li.active { background: rgb(236,83,1); }
+.top-bar ul > li:hover a, .top-bar ul > li.active a { color: rgb(254,94, 8);}
+.top-bar ul > li.search { height: 75px; line-height: 90px; padding: 0px 25px;}
+.top-bar ul > li.search form input[type=text] { width: 75%; }
+.top-bar ul > li.search:hover { background: none repeat scroll 0% 0% rgb(236,83,1);}
+.top-bar ul > li.divider { background: rgb(236,83,1); -webkit-box-shadow: 1px 0 0 rgba(236,83,1, 0.1); -moz-box-shadow: 1px 0 0 rgba(236,83,1, 0.1); box-shadow: 1px 0 0 rgba(236,83,1, 0.1); height: 100%; margin-right: 1px; width: 1px; }
+.top-bar ul.left > li.has-dropdown .dropdown, .top-bar ul.right > li.has-dropdown .dropdown {left: 100% !important; top: 0px; right: auto !important; background: #fe5e08;}
+
+
+    
+/***@media only screen and (max-width: 940px)
+************************************************/
+@media only screen and (max-width: 940px) {
+	.top-bar {background: none repeat scroll 0% 0% rgb(254, 94, 8); height: 75px; line-height: 75px; margin: 0px; padding: 0px; width: 100%;}
+	.top-bar ul {margin-left: 0px; display: inline; height: 75px; line-height: 85px; list-style: none outside none;}
+	.top-bar ul > li:hover:not(.name), .top-bar ul > li.active:not(.name) {background: none repeat scroll 0% 0% rgb(254, 94, 8);}
+	.top-bar ul > li.name { background: none repeat scroll 0% 0% rgb(254,94,8); height: 75px;}
+	.top-bar ul > li.name h1 a {color: rgb(255, 255, 255); display: block; line-height: 75px !important; padding-left: 22.5px;height: 75px;}
+	.top-bar ul > li.name h1 a:hover {background: rgb(254,94,8);}
+	.top-bar ul > li.name h1 a:hover {color: rgb(217, 217, 217);}
+	.top-bar ul > li a:not(.button) { color: white; display: block; font-size: 13px; font-weight: bold; height: 45px; line-height: 40px; padding: 0 15px; }
+	.top-bar ul > li.has-button:hover {background: none repeat scroll 0% 0% rgb(236,83,1);}
+	.button:hover {color: rgb(255, 255, 255);background-color: rgb(210, 74, 1);}
+
+	.top-bar ul > li:hover a,.top-bar ul > li.active { background: rgb(254,94,8); }
+	.top-bar ul > li:hover a, .top-bar ul > li.active a { color: (254,94, 8);}
+	.top-bar ul > li.search { height: 75px; line-height: 90px; padding: 0px 25px;}
+	.top-bar ul > li.search form input[type=text] { width: 75%; }
+	.top-bar ul > li.search:hover { background: none repeat scroll 0% 0% rgb(236,83,1);}
+	.top-bar ul > li.divider { background: rgb(236,83,1); -webkit-box-shadow: 1px 0 0 rgba(236,83,1, 0.1); -moz-box-shadow: 1px 0 0 rgba(236,83,1, 0.1); box-shadow: 1px 0 0 rgba(236,83,1, 0.1); height: 100%; margin-right: 1px; width: 1px; }
+    .top-bar ul > li.toggle-topbar { display: none; }
+    .top-bar ul > li.toggle-topbar {cursor: pointer; display: block;height: 68px; position: absolute;right: 0px; top: 0px;width: 15%;}
+    .top-bar ul > li.toggle-topbar a:hover { background:none;}
+    .top-bar ul.left > li.has-dropdown .dropdown, .top-bar ul.right > li.has-dropdown .dropdown {left: 100% !important; top: 0px; right: auto !important; background: #fe5e08;}
+    .top-bar ul > li.has-dropdown.moved > .dropdown li:not(.title) a { padding: 8px 22.5px; font-size: 14px; background: #fe5e08;}
+    .top-bar ul > li.has-dropdown.moved > .dropdown li a:hover { background: none repeat scroll 0% 0% #fe5e08; display: block;}
+
+}
+.orbit {width: 1px;height: 1px; position: relative; overflow: hidden; margin-bottom: 20px; margin-top: 20px;}
+
+.container { /*margin-top:74px;*/}
+
+ 
+ /* Begin Image Custom Frame Formatting */
+.custom-frame, .small-custom-frame {
+    border: 1px solid #EAEAEA;
+    display: inline-block;
+}
+.custom-frame img, .small-custom-frame img {
+    border: 1px solid #FFFFFF;
+    margin: 0;
+    background: #F6F6F6; /* old browsers */
+}
+.frame-shadow img {
+    box-shadow:  2px 2px 5px #CCCCCC;
+}
+.custom-frame img { padding: 8px; }
+.small-custom-frame img { padding: 4px; }
+.custom-frame a img:hover, .small-custom-frame a img:hover { border: 1px solid #999; }
+
+/* Box-Shadow ---------------------------- */
+.box {height: 150px;width: 300px;margin: 20px;border: 1px solid #ccc;}
+.bxtop {box-shadow: 0 -5px 5px -5px #333;}
+.bxright {box-shadow: -5px 0 5px -5px #333;}
+.bxbottom {box-shadow: 0 5px 5px -5px #333;}
+.bxleft {box-shadow: 5px 0 5px -5px #333;}
+.bxall {box-shadow: 0 0 5px #333;}
+
+/* Image Thumbnails ---------------------- */
+.th { display: block; }
+.th img { display: block; border: solid 8px #fff; -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; -webkit-transition-property: box-shadow; -moz-transition-property: box-shadow; -o-transition-property: box-shadow; transition-property: box-shadow; -webkit-transition-duration: 300ms; -moz-transition-duration: 300ms; -o-transition-duration: 300ms; transition-duration: 300ms; }
+.th:hover img { -webkit-box-shadow: 0 0 6px 1px rgba(254, 94, 8, 0.5); -moz-box-shadow: 0 0 6px 1px rgba(254, 94, 8, 0.5); box-shadow: 0 0 6px 1px rgba(254, 94, 8, 0.5); }
+
+/* Orbit Slider ---------------------- */
+.orbit-wrapper { width: 1px; height: 1px; position: relative; }
+
+.orbit { width: 1px; height: 1px; position: relative; overflow: hidden; margin: 0px; }
+.orbit.with-bullets { margin-bottom: 40px; }
+.orbit .orbit-slide { max-width: 100%; position: absolute; top: 0; left: 0; }
+.orbit a.orbit-slide { border: none; line-height: 0; display: none; }
+.orbit div.orbit-slide { width: 100%; height: 100%; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
+
+/* Note: If your slider only uses content or anchors, you're going to want to put the width and height declarations on the ".orbit>div" and "div.orbit>a" tags in addition to just the .orbit-wrapper */
+/* Timer ---------------------- */
+div.orbit-wrapper div.timer { width: 40px; height: 40px; overflow: hidden; position: absolute; top: 10px; right: 10px; opacity: .6; cursor: pointer; z-index: 31; }
+div.orbit-wrapper span.rotator { display: block; width: 40px; height: 40px; position: absolute; top: 0; left: -20px; background: url('../images/foundation/orbit/rotator-black.png') no-repeat; z-index: 3; }
+div.orbit-wrapper span.rotator.move { left: 0; }
+div.orbit-wrapper span.mask { display: block; width: 20px; height: 40px; position: absolute; top: 0; right: 0; z-index: 2; overflow: hidden; }
+div.orbit-wrapper span.mask.move { width: 40px; left: 0; background: url('../images/foundation/orbit/timer-black.png') repeat 0 0; }
+div.orbit-wrapper span.pause { display: block; width: 40px; height: 40px; position: absolute; top: 0; left: 0; background: url('../images/foundation/orbit/pause-black.png') no-repeat; z-index: 4; opacity: 0; }
+div.orbit-wrapper span.pause.active { background: url('../images/foundation/orbit/pause-black.png') no-repeat 0 -40px; }
+div.orbit-wrapper div.timer:hover span.pause, div.orbit-wrapper div.timer:focus span.pause, div.orbit-wrapper span.pause.active { opacity: 1; }
+
+/* Captions ---------------------- */
+.orbit-caption { display: none; font-family: inherit; }
+
+.orbit-wrapper .orbit-caption { background: black; background: rgba(0, 0, 0, 0.6); z-index: 30; color: white; text-align: center; padding: 7px 0; font-size: 13px; position: absolute; right: 0; bottom: 0; width: 100%; }
+
+/* Directional Nav ---------------------- */
+div.orbit-wrapper div.slider-nav { display: block; }
+div.orbit-wrapper div.slider-nav span { width: 39px; height: 50px; text-indent: -9999px; position: absolute; z-index: 30; top: 50%; margin-top: -25px; cursor: pointer; }
+div.orbit-wrapper div.slider-nav span.right { background: url('../images/foundation/orbit/right-arrow-big.png'); background-size: 100%; right: 5px; }
+div.orbit-wrapper div.slider-nav span.left { background: url('../images/foundation/orbit/left-arrow-big.png'); background-size: 100%; left: 5px; }
+
+.lt-ie9 div.orbit-wrapper div.slider-nav span.right { background: url('../images/foundation/orbit/right-arrow-big.png'); }
+.lt-ie9 div.orbit-wrapper div.slider-nav span.left { background: url('../images/foundation/orbit/left-arrow-big.png'); }
+
+/* Bullet Nav ---------------------- */
+ul.orbit-bullets { position: absolute; z-index: 30; list-style: none; bottom: -40px; left: 50%; margin-left: -50px; padding: 0; }
+ul.orbit-bullets li { float: left; margin-left: 5px; cursor: pointer; color: #999999; text-indent: -9999px; background: url('../images/foundation/orbit/bullets.jpg') no-repeat 4px 0; width: 13px; height: 12px; overflow: hidden; }
+ul.orbit-bullets li.active { color: #222222; background-position: -8px 0; }
+ul.orbit-bullets li.has-thumb { background: none; width: 100px; height: 75px; }
+ul.orbit-bullets li.active.has-thumb { background-position: 0 0; border-top: 2px solid black; }
+
+/* Orbit Slide Counter */
+.orbit-slide-counter { position: absolute; bottom: 0; z-index: 99; background: rgba(0, 0, 0, 0.7); color: white; padding: 5px; }
+
+/* Fluid Layout ---------------------- */
+div.orbit img.fluid-placeholder { visibility: hidden; position: static; display: block; width: 100%; }
+
+div.orbit, div.orbit-wrapper { width: 100% !important; }
+
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+    background-color: #ddd; border: 1px solid rgb(254,94,8); border-radius: 5px 5px 5px 5px; box-shadow: 0px 1px 2px rgba(17,17,17, 0.5) inset; color: rgba(170,170,170, 0.75); display: block; font-size: 14px; margin: 0px 0px 12px;
+    padding: 6px; height: 32px; width: 100%; transition: all 0.15s linear 0s;
+}
+
+textarea { background-color: #ddd; border: 1px solid rgb(254,94,8); border-radius: 5px 5px 5px 5px; box-shadow: 0px 1px 2px rgba(17,17,17, 0.5) inset; color: rgba(170,170,170, 0.75); display: block; font-size: 14px; margin: 0px 0px 12px;
+   padding: 6px; height: 150px; width: 100%; transition: all 0.15s linear 0s;
+}
+
+
+
+/* -----------------------------------------
+   HomePage
+----------------------------------------- */
+.orbit-border {
+    padding: 10px;
+    background: none repeat scroll 0% 0% rgb(254, 83, 8);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.7);
+    border: 1px solid #000;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.orbitBG {background-color: rgb(255,243,238); background-image: url(../images/orbitBG.jpg); border-bottom: 1px dashed #999;}
+#column_wrapper { margin-top:20px;} 
+
+
+
+/* -----------------------------------------
+   Porfolio Page
+----------------------------------------- */
+
+.item{
+float: left; 
+margin: 8px;
+max-width: 310px;
+background: #EFEFEF;
+-moz-border-radius: 7px; 
+-webkit-border-radius: 7px; 
+border-radius: 7px; 
+text-align: center;
+-moz-box-shadow: 0px 0px 6px #999; 
+-webkit-box-shadow: 0px 0px 6px #999; 
+box-shadow: 0px 0px 6px #999; 
+padding: 3px;
+}
+
+.item p{ text-align: left; padding-left:10px }
+.item p a{ text-align: left; font-weight: bold;  }
+
+
+.item img{ margin-top: 5px; text-align: center; border: 1px solid #000000; max-width: 280px;}
+
+/* self-clear floats 
+
+.group:after {
+  content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+
+/* -----------------------------------------
+   Blog Posts
+----------------------------------------- */
+.wp-post-image { margin-top: 15px;  border: 7px solid rgb(255, 255, 255); position: relative; box-shadow: 0px 2px 5px rgb(117, 136, 138);}
+.ctwd-banner { border: 7px solid rgb(255, 255, 255); position: relative; box-shadow: 0px 2px 5px rgb(117, 136, 138);}
+
+img.center {   display: block;   margin-left: auto;   margin-right: auto; }
+
+/* -----------------------------------------
+   Landing Page
+----------------------------------------- */
+
+.LPcontainer {
+    width: 85%;
+    margin: 25px auto;
+    background-color: rgb(255,255,255);
+    padding: 20px;
+    opacity:0.65;
+    border-radius: 10px;
+}
+
+.LPbody { background: url('../images/iphone&ipad1700.png'); }
+
+.100op {opacity: 1.0;}
+
+.top125 { margin-top: 125px;}
+.top25 { margin-top: 25px;}
+.bottom25 { margin-bottom: 25px;}
+
+.orange { color: rgb(254, 94, 8); text-shadow: 2px 2px 7px #999;}
+.textWHITE { color: white;}
+
+/* -----------------------------------------
+   Web Design Page
+----------------------------------------- */
+.rightPrice {box-shadow: 0px 0px 10px #fe5e08}
+
+/* -----------------------------------------
+   RAD Dropbox Uploader
+----------------------------------------- */
+
+input.rad-dropbox-button {width: auto; background: #fe5e08; border: 1px solid #b94101; -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; color: white; cursor: pointer; display: inline-block; font-family: inherit; font-size: 11px; font-weight: bold; line-height: 1; margin: 0; padding: 7px 14px 8px; margin-top:15px; position: relative; text-align: center; text-decoration: none; -webkit-transition: background-color 0.15s ease-in-out; -moz-transition: background-color 0.15s ease-in-out; -o-transition: background-color 0.15s ease-in-out; transition: background-color 0.15s ease-in-out; /* Hovers */ /* Sizes */ /* Colors */ /* Radii */ /* Layout */ /* Disabled ---------- */ }
+input.rad-dropbox-button:hover, input.rad-dropbox-button:focus { color: white; background-color: #d24a01; }
